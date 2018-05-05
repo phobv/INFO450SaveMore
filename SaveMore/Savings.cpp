@@ -19,9 +19,9 @@ double Savings::withdraw(double w)
 	{
 		balance -= w;
 		balance -= FEE;
-		return 0;
+		
 	}
-
+	return 0;
 }
 
 //add deposit to balance along with interest
@@ -36,8 +36,9 @@ double Savings::deposit(double d)
 	{
 		balance += d;
 		AssessInterest();
-		return 0;
+		
 	}
+	return 0;
 }
 
 void Savings::AssessInterest()
