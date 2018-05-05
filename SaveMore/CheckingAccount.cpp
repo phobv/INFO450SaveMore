@@ -4,28 +4,31 @@
 #include <iostream>
 using namespace std;
 
-CheckingAccount::CheckingAccount(int aN, double iR, double b) :BankAccount(aN, iR, b)
+CheckingAccount::CheckingAccount(int aN,  double b) :BankAccount(aN, b)
 {
-
+//Interest Rate set to 0 cause it doesnt apply to Checking Account
+	interestRate = 0;
 }
 
+//Withdraw function takes out money from the checking account
 double CheckingAccount::withdraw(double w)
-//Checks to see if 
+
 {
 	if((balance - w) > 0)
 	{
 		balance -= w;
 		checkBalance();
-		return 0;
+		
 	}
 
 	else if ((balance - w) < 0)
 	{
 		return -1;
 	}
-
+	return 0;
 }
 
+// Orders check and takes out 15 dollar from balance
 int CheckingAccount::orderCheck()
 {
 	if (balance > ORDERCHECK)
@@ -33,12 +36,13 @@ int CheckingAccount::orderCheck()
 		balance -= ORDERCHECK;
 
 		checkBalance();
-		return 0;
+		
 	}
 	else if (balance < ORDERCHECK)
 	{
 		return -1;
 	}
+	return 0;
 }
 
 void CheckingAccount::checkBalance()

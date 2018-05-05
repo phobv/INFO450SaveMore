@@ -3,8 +3,8 @@
 #include <iostream>
 using namespace std;
 
-
-Savings::Savings(int aN, double iR, double b) :BankAccount(aN, iR, b)
+//constructor
+Savings::Savings(int aN,  double b) :BankAccount(aN,  b)
 {
 	AssessInterest();
 }
@@ -24,6 +24,7 @@ double Savings::withdraw(double w)
 
 }
 
+//add deposit to balance along with interest
 double Savings::deposit(double d)
 {
 	if (d < 0)
